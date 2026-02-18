@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Mail, MapPin, Send, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, MapPin, Send, Github, Linkedin } from "lucide-react";
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -39,7 +39,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <div className="font-mono text-xs text-muted-foreground uppercase tracking-wider">Email</div>
-                <div className="text-foreground">pavithran@example.com</div>
+                <a href="mailto:pavithranrajendran2002@gmail.com" className="text-foreground hover:text-primary transition-colors">pavithranrajendran2002@gmail.com</a>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -54,13 +54,14 @@ const ContactSection = () => {
 
             <div className="flex gap-4 pt-4">
               {[
-                { icon: Github, href: "#" },
-                { icon: Linkedin, href: "#" },
-                { icon: Twitter, href: "#" },
+                { icon: Github, href: "https://github.com/Pavithranluffy" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/pavithran-rp" },
               ].map(({ icon: Icon, href }, i) => (
                 <motion.a
                   key={i}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.15, y: -3 }}
                   className="w-12 h-12 rounded-xl glass glow-border glow-border-hover flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
                 >
