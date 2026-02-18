@@ -3,24 +3,63 @@ import { useRef } from "react";
 
 const skillCategories = [
   {
-    title: "Frontend",
+    title: "Front-End Development",
     icon: "◆",
-    skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Framer Motion"],
+    skills: [
+      "React.js",
+      "Angular",
+      "Vue.js",
+      "TypeScript",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+    ],
   },
   {
-    title: "Backend",
+    title: "Back-End Development",
     icon: "◈",
-    skills: ["Node.js", "Python", "Express", "REST APIs", "GraphQL"],
+    skills: [
+      "Java",
+      "Spring Boot",
+      "Node.js",
+      "GraphQL",
+      "REST APIs",
+      "WebSocket",
+      "JMS/Message Queues",
+    ],
   },
   {
-    title: "Database",
+    title: "AI & Machine Learning [Learning Stage]",
+    icon: "❖",
+    skills: [
+      "Python (FastAPI)",
+      "TensorFlow",
+      "PyTorch",
+      "LangChain",
+      "LlamaIndex",
+      "Hugging Face Transformers",
+      "RAG Pipelines",
+      "OpenAI GPT APIs",
+      "Vector Databases (Pinecone)",
+      "Model Fine-tuning",
+      "MLOps (MLflow)",
+    ],
+  },
+  {
+    title: "Tools & Databases",
     icon: "◇",
-    skills: ["PostgreSQL", "MongoDB", "Redis", "Firebase", "Supabase"],
+    skills: ["Git", "GitHub", "MySQL", "MongoDB", "AWS", "Elasticsearch"],
   },
   {
-    title: "DevOps & Tools",
+    title: "Frameworks & Principles",
     icon: "⬡",
-    skills: ["Docker", "Git", "AWS", "CI/CD", "Linux"],
+    skills: ["MVC", "OOPS", "SOLID", "Design Patterns", "Microservice Architecture"],
+  },
+  {
+    title: "Soft Skills",
+    icon: "◎",
+    skills: ["Problem-Solving", "Analytical Thinking", "Collaboration", "Communication"],
   },
 ];
 
@@ -44,7 +83,7 @@ const SkillsSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((cat, i) => (
             <motion.div
               key={cat.title}

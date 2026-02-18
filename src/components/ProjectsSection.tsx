@@ -4,30 +4,30 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "NeoCommerce",
-    description: "A next-generation e-commerce platform with AI-powered recommendations, real-time inventory, and seamless payment integration.",
-    tech: ["React", "Node.js", "PostgreSQL", "Stripe", "AI/ML"],
+    title: "Enterprise ERP & Analytics Core",
+    description: "High-performance backend modules for a large-scale ERP platform. Features complex business logic, data validations, and real-time analytics.",
+    tech: ["Java Spring Boot", "Vue.js", "Elasticsearch", "AWS", "JMS"],
     color: "from-primary/20 to-accent/20",
     number: "01",
   },
   {
-    title: "DataFlow Engine",
-    description: "Real-time data pipeline visualization tool enabling teams to monitor, debug, and optimize complex data workflows.",
-    tech: ["TypeScript", "D3.js", "WebSocket", "Redis", "Docker"],
+    title: "Nebula Stream",
+    description: "Real-time communication infrastructure supporting instant messaging and live updates with sub-second latency.",
+    tech: ["Node.js", "React", "WebSocket", "Redis", "MongoDB"],
     color: "from-secondary/20 to-primary/20",
     number: "02",
   },
   {
-    title: "CloudSync Pro",
-    description: "Enterprise-grade file synchronization service with end-to-end encryption and multi-cloud storage support.",
-    tech: ["Next.js", "AWS S3", "Python", "MongoDB", "OAuth"],
+    title: "TalentLens AI",
+    description: "Next-gen recruitment platform leveraging LLMs for automated resume parsing, candidate ranking, and bias-free screening.",
+    tech: ["Next.js", "Python FastAPI", "OpenAI", "PostgreSQL", "Docker"],
     color: "from-accent/20 to-secondary/20",
     number: "03",
   },
   {
-    title: "DevMetrics AI",
-    description: "AI-powered developer productivity analytics dashboard providing insights into code quality and team performance.",
-    tech: ["React", "FastAPI", "TensorFlow", "GraphQL", "K8s"],
+    title: "FinTech Ledger",
+    description: "High-frequency trading dashboard with real-time market data visualization and milliseconds-level updates.",
+    tech: ["Rust", "React", "WebSockets", "TimescaleDB", "gRPC"],
     color: "from-primary/20 to-secondary/20",
     number: "04",
   },
@@ -64,9 +64,8 @@ const ProjectsSection = () => {
               onMouseLeave={() => setHovered(null)}
               className="group relative"
             >
-              <div className={`glass glow-border glow-border-hover rounded-2xl p-8 md:p-10 transition-all duration-500 ${
-                hovered === i ? "scale-[1.01]" : ""
-              }`}>
+              <div className={`glass glow-border glow-border-hover rounded-2xl p-8 md:p-10 transition-all duration-500 ${hovered === i ? "scale-[1.01]" : ""
+                }`}>
                 <div className="flex flex-col md:flex-row md:items-start gap-6">
                   <div className="font-display text-6xl md:text-8xl font-bold text-gradient-primary opacity-30 leading-none">
                     {project.number}
@@ -89,12 +88,15 @@ const ProjectsSection = () => {
                       ))}
                     </div>
                     <div className="flex gap-4">
-                      <motion.button
+                      <motion.a
+                        href="https://github.com/Pavithranluffy/PersonalProjects"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         whileHover={{ scale: 1.1 }}
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
                         <Github size={20} />
-                      </motion.button>
+                      </motion.a>
                       <motion.button
                         whileHover={{ scale: 1.1 }}
                         className="text-muted-foreground hover:text-primary transition-colors"

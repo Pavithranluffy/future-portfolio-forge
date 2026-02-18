@@ -57,8 +57,8 @@ const HeroSection = () => {
             transition={{ delay: 1.5, duration: 0.8 }}
             className="text-muted-foreground text-lg md:text-xl max-w-2xl mb-12 font-light leading-relaxed"
           >
-            Crafting digital experiences that push the boundaries of technology.
-            Building the future, one line of code at a time.
+            Building scalable, high-performance applications with modern tech stacks.
+            Transforming complex requirements into seamless digital experiences.
           </motion.p>
 
           <motion.div

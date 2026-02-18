@@ -2,10 +2,10 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const stats = [
-  { label: "Years Experience", value: "3+" },
-  { label: "Projects Completed", value: "20+" },
+  { label: "Years Experience", value: "1.6+" },
+  { label: "Projects Completed", value: "10+" },
   { label: "Technologies", value: "15+" },
-  { label: "Lines of Code", value: "100K+" },
+  { label: "Lines of Code", value: "200K+" },
 ];
 
 const AboutSection = () => {
@@ -42,6 +42,8 @@ const AboutSection = () => {
             <p className="text-muted-foreground text-lg leading-relaxed">
               My journey in tech has been driven by curiosity and a relentless pursuit of excellence.
               I specialize in creating seamless user experiences powered by cutting-edge technology stacks.
+              Strong in UI development, API integration, and performance optimization, I have experience
+              building microservice-based enterprise systems.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed">
               When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects,

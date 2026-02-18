@@ -3,25 +3,18 @@ import { useRef } from "react";
 
 const experiences = [
   {
-    role: "Senior Full Stack Developer",
-    company: "Tech Corp",
-    period: "2023 — Present",
-    description: "Leading development of scalable web applications, mentoring junior devs, and architecting microservices infrastructure.",
-    tech: ["React", "Node.js", "AWS", "PostgreSQL"],
+    role: "Software Developer",
+    company: "RW Team (formerly HikeOn)",
+    period: "Sep 2025 — Present",
+    description: "Contributing to a large-scale ERP platform, building and maintaining multiple backend modules using Java, Spring Boot, Vue.js, and Elasticsearch. Designed and implemented the Returns Module backend.",
+    tech: ["Java", "Spring Boot", "Vue.js", "Elasticsearch", "AWS"],
   },
   {
-    role: "Full Stack Developer",
-    company: "Digital Solutions Inc",
-    period: "2022 — 2023",
-    description: "Built and maintained multiple client-facing applications, implemented CI/CD pipelines, and optimized database performance.",
-    tech: ["Next.js", "Python", "Docker", "MongoDB"],
-  },
-  {
-    role: "Frontend Developer",
-    company: "StartUp Hub",
-    period: "2021 — 2022",
-    description: "Developed responsive UIs and interactive dashboards, collaborated with design teams to create pixel-perfect implementations.",
-    tech: ["React", "TypeScript", "Tailwind", "Firebase"],
+    role: "Software Developer",
+    company: "California Software",
+    period: "Jun 2024 — Aug 2025",
+    description: "Built dynamic UI components using React.js and Angular. Developed scalable backend APIs using Java Spring Boot. Engineered a real-time Bulk Messaging System using WebSocket and Node.js.",
+    tech: ["React.js", "Angular", "Java Spring Boot", "WebSocket", "Node.js"],
   },
 ];
 
