@@ -30,23 +30,6 @@ const skillCategories = [
     ],
   },
   {
-    title: "AI & Machine Learning [Learning Stage]",
-    icon: "❖",
-    skills: [
-      "Python (FastAPI)",
-      "TensorFlow",
-      "PyTorch",
-      "LangChain",
-      "LlamaIndex",
-      "Hugging Face Transformers",
-      "RAG Pipelines",
-      "OpenAI GPT APIs",
-      "Vector Databases (Pinecone)",
-      "Model Fine-tuning",
-      "MLOps (MLflow)",
-    ],
-  },
-  {
     title: "Tools & Databases",
     icon: "◇",
     skills: ["Git", "GitHub", "MySQL", "MongoDB", "AWS", "Elasticsearch"],
