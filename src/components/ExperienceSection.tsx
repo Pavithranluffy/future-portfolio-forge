@@ -6,14 +6,14 @@ const experiences = [
     role: "Software Developer",
     company: "RW Team",
     period: "Sep 2025 — Present",
-    description: "Contributing to a large-scale ERP platform, building and maintaining multiple backend modules using Java, Spring Boot, Vue.js, and Elasticsearch. Designed and implemented the Returns Module backend.",
-    tech: ["Java", "Spring Boot", "Vue.js", "Elasticsearch", "AWS"],
+    description: "Owned end-to-end delivery of the Returns Module on a large-scale ERP. Designed 20+ REST APIs in Java/Spring Boot, cutting API latency by 20–30%. Architected asynchronous JMS-based pipelines, raising system throughput by ~25%. Built Elasticsearch analytics delivering sub-second queries over 100K+ records.",
+    tech: ["Java", "Spring Boot", "Vue.js", "Elasticsearch", "AWS", "JMS"],
   },
   {
     role: "Software Developer",
     company: "California Software",
     period: "Jun 2024 — Aug 2025",
-    description: "Built dynamic UI components using React.js and Angular. Developed scalable backend APIs using Java Spring Boot. Engineered a real-time Bulk Messaging System using WebSocket and Node.js.",
+    description: "Engineered reusable, responsive UI systems in React.js and Angular, driving up to 40% performance gains through memoization and code splitting. Architected a real-time messaging system in WebSockets + Node.js with sub-second message delivery. Delivered Spring Boot microservices with contract-first REST APIs.",
     tech: ["React.js", "Angular", "Java Spring Boot", "WebSocket", "Node.js"],
   },
 ];

@@ -4,32 +4,31 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "Enterprise ERP & Analytics Core",
-    description: "High-performance backend modules for a large-scale ERP platform. Features complex business logic, data validations, and real-time analytics.",
-    tech: ["Java Spring Boot", "Vue.js", "Elasticsearch", "AWS", "JMS"],
+    title: "ERP Insights",
+    description: "Engineered an Elasticsearch-powered search module over 100K+ ERP records with optimized mappings and aggregation pipelines, achieving sub-second filtered queries.",
+    tech: ["Java", "Spring Boot", "React.js", "Elasticsearch", "JMS"],
     color: "from-primary/20 to-accent/20",
     number: "01",
+    github: "https://github.com/Pavithranluffy/ERP-Insight-2.0",
+    live: "https://erp-insights.netlify.app",
+  },
+  {
+    title: "LifeOS AI",
+    description: "Architected an AI-first productivity platform embedding GPT into habit tracking, task planning, and meeting summarization; built a GPT-powered meeting summarizer.",
+    tech: ["Next.js", "React.js", "Java", "Spring Boot", "Node.js", "OpenAI GPT"],
+    color: "from-secondary/20 to-primary/20",
+    number: "02",
+    github: "https://github.com/Pavithranluffy/lifeos-ai",
+    live: "https://ifeos-ai-app.netlify.app",
   },
   {
     title: "Nebula Stream",
-    description: "Real-time communication infrastructure supporting instant messaging and live updates with sub-second latency.",
-    tech: ["Node.js", "React", "WebSocket", "Redis", "MongoDB"],
-    color: "from-secondary/20 to-primary/20",
-    number: "02",
-  },
-  {
-    title: "TalentLens AI",
-    description: "Next-gen recruitment platform leveraging LLMs for automated resume parsing, candidate ranking, and bias-free screening.",
-    tech: ["Next.js", "Python FastAPI", "OpenAI", "PostgreSQL", "Docker"],
+    description: "Architected a scalable real-time chat system with instant messaging, presence tracking, and group channels; leveraged Redis pub/sub for horizontal scaling.",
+    tech: ["Node.js", "WebSockets", "Redis", "Event-Driven Architecture"],
     color: "from-accent/20 to-secondary/20",
     number: "03",
-  },
-  {
-    title: "FinTech Ledger",
-    description: "High-frequency trading dashboard with real-time market data visualization and milliseconds-level updates.",
-    tech: ["Rust", "React", "WebSockets", "TimescaleDB", "gRPC"],
-    color: "from-primary/20 to-secondary/20",
-    number: "04",
+    github: "https://github.com/Pavithranluffy/nebula-stream",
+    live: "https://nebula-stream-app.netlify.app",
   },
 ];
 
@@ -88,21 +87,28 @@ const ProjectsSection = () => {
                       ))}
                     </div>
                     <div className="flex gap-4">
-                      <motion.a
-                        href="https://github.com/Pavithranluffy/PersonalProjects"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.1 }}
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        <Github size={20} />
-                      </motion.a>
-                      <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        <ExternalLink size={20} />
-                      </motion.button>
+                      {project.github && (
+                        <motion.a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.1 }}
+                          className="text-muted-foreground hover:text-primary transition-colors"
+                        >
+                          <Github size={20} />
+                        </motion.a>
+                      )}
+                      {project.live && (
+                        <motion.a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.1 }}
+                          className="text-muted-foreground hover:text-primary transition-colors"
+                        >
+                          <ExternalLink size={20} />
+                        </motion.a>
+                      )}
                     </div>
                   </div>
                 </div>

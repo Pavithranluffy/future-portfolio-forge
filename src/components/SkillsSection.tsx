@@ -17,7 +17,7 @@ const skillCategories = [
     ],
   },
   {
-    title: "Back-End Development",
+    title: "Backend & AI",
     icon: "◈",
     skills: [
       "Java",
@@ -26,7 +26,10 @@ const skillCategories = [
       "GraphQL",
       "REST APIs",
       "WebSocket",
-      "JMS/Message Queues",
+      "JMS",
+      "Microservices",
+      "OpenAI GPT",
+      "RAG Pipelines",
     ],
   },
   {
