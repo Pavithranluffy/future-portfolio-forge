@@ -5,7 +5,7 @@ const experiences = [
   {
     role: "Software Developer",
     company: "RW Team",
-    period: "Sep 2025 — Present",
+    period: "Sep 2025 — Jun 2026",
     description: "Contributing to a large-scale ERP platform, building and maintaining multiple backend modules using Java, Spring Boot, Vue.js, and Elasticsearch. Designed and implemented the Returns Module backend.",
     tech: ["Java", "Spring Boot", "Vue.js", "Elasticsearch", "AWS"],
   },
