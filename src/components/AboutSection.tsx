@@ -49,6 +49,14 @@ const AboutSection = () => {
               When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects,
               and mentoring aspiring developers.
             </p>
+            <div className="pt-4 border-t border-border/50">
+              <h3 className="text-foreground font-display text-xl font-bold mb-2">Education</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                <strong className="text-primary font-medium">B.Tech in Information Technology</strong> <br />
+                KGISL Institute of Technology (2020 – 2024) <br />
+                CGPA: <span className="text-foreground">8.37</span>
+              </p>
+            </div>
           </motion.div>
 
           <div className="grid grid-cols-2 gap-4">

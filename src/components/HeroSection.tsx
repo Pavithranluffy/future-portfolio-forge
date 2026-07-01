@@ -25,11 +25,15 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mb-6"
+            className="mb-6 flex flex-col sm:flex-row sm:items-center gap-4"
           >
             <span className="font-mono text-primary text-sm md:text-base tracking-widest">
               &lt; HELLO WORLD /&gt;
             </span>
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 w-fit">
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse-glow" />
+              <span className="font-mono text-xs text-primary">Available to join immediately</span>
+            </div>
           </motion.div>
 
           <motion.h1
@@ -84,6 +88,15 @@ const HeroSection = () => {
             >
               Get In Touch
             </motion.button>
+            <motion.a
+              href="/Pavithran_Resume.pdf"
+              download
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 glass text-foreground font-display font-semibold rounded-lg transition-all flex items-center justify-center border border-border hover:border-primary/50 hover:bg-primary/5"
+            >
+              Download Resume
+            </motion.a>
           </motion.div>
         </div>
 

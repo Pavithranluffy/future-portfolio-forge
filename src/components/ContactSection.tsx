@@ -1,10 +1,44 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { Mail, MapPin, Send, Github, Linkedin } from "lucide-react";
+import { useRef, useState } from "react";
+import { Mail, MapPin, Send, Github, Linkedin, CheckCircle, AlertCircle } from "lucide-react";
 
 const ContactSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    formData.append("access_key", "75bced97-11e0-47c1-b1d7-744c6b2b31c9");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitStatus("success");
+        form.reset();
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      console.error(error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => setSubmitStatus("idle"), 5000);
+    }
+  };
 
   return (
     <section id="contact" className="py-32 relative">
@@ -77,11 +111,13 @@ const ContactSection = () => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="space-y-4"
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleSubmit}
           >
             <div>
               <input
                 type="text"
+                name="name"
+                required
                 placeholder="Your Name"
                 className="w-full px-5 py-4 rounded-xl bg-muted/50 border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:shadow-[0_0_15px_hsl(195_100%_50%/0.1)] transition-all font-body"
               />
@@ -89,26 +125,46 @@ const ContactSection = () => {
             <div>
               <input
                 type="email"
+                name="email"
+                required
                 placeholder="Your Email"
                 className="w-full px-5 py-4 rounded-xl bg-muted/50 border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:shadow-[0_0_15px_hsl(195_100%_50%/0.1)] transition-all font-body"
               />
             </div>
             <div>
               <textarea
+                name="message"
+                required
                 rows={5}
                 placeholder="Your Message"
                 className="w-full px-5 py-4 rounded-xl bg-muted/50 border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:shadow-[0_0_15px_hsl(195_100%_50%/0.1)] transition-all resize-none font-body"
               />
             </div>
+            
+            {submitStatus === "success" && (
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-2 text-green-500 bg-green-500/10 p-4 rounded-xl border border-green-500/20">
+                <CheckCircle size={20} />
+                <span>Message sent successfully! I'll get back to you soon.</span>
+              </motion.div>
+            )}
+            
+            {submitStatus === "error" && (
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-2 text-red-500 bg-red-500/10 p-4 rounded-xl border border-red-500/20">
+                <AlertCircle size={20} />
+                <span>Something went wrong. Please try again later.</span>
+              </motion.div>
+            )}
+
             <motion.button
               type="submit"
-              whileHover={{ scale: 1.02, boxShadow: "0 0 30px hsla(195, 100%, 50%, 0.3)" }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full px-8 py-4 bg-primary text-primary-foreground font-display font-semibold rounded-xl flex items-center justify-center gap-2 relative overflow-hidden group"
+              disabled={isSubmitting}
+              whileHover={{ scale: isSubmitting ? 1 : 1.02, boxShadow: isSubmitting ? "none" : "0 0 30px hsla(195, 100%, 50%, 0.3)" }}
+              whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+              className="w-full px-8 py-4 bg-primary text-primary-foreground font-display font-semibold rounded-xl flex items-center justify-center gap-2 relative overflow-hidden group disabled:opacity-70 disabled:cursor-not-allowed transition-all"
             >
-              <span className="relative z-10">Send Message</span>
-              <Send size={18} className="relative z-10" />
-              <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <span className="relative z-10">{isSubmitting ? "Sending..." : "Send Message"}</span>
+              {!isSubmitting && <Send size={18} className="relative z-10" />}
+              {!isSubmitting && <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity" />}
             </motion.button>
           </motion.form>
         </div>
