@@ -32,7 +32,7 @@ const HeroSection = () => {
             </span>
             <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 w-fit">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse-glow" />
-              <span className="font-mono text-xs text-primary">Available to join immediately</span>
+              <span className="font-mono text-xs text-primary">30-day notice period</span>
             </div>
           </motion.div>
 

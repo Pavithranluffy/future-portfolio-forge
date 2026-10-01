@@ -4,6 +4,22 @@ import { useRef } from "react";
 const experiences = [
   {
     role: "Software Developer",
+    company: "Abacus Staffing Services",
+    client: "Client: Cozentus",
+    location: "Bangalore, India",
+    period: "Aug 2026 — Present",
+    description: [
+      "Develop and maintain Java/Spring Boot enterprise applications, REST APIs, integrations, and reporting solutions for logistics and transportation workflows.",
+      "Perform end-to-end impact analysis across Jira requirements, knowledge-transfer documentation, source code, database mappings, Excel specifications, and business workflows.",
+      "Build and support booking, transportation, shipment, container, and customer integrations using REST APIs, XML/JSON, AWS API Gateway, authentication and authorization, and schedulers.",
+      "Develop and maintain APRIL/Meridian reports with Java and Apache POI, including daily, customer, container, and country-specific variants.",
+      "Trace source-to-report data with SQL and database analysis; validate mappings, joins, and business rules, optimize performance, and reduce repeated database access through pre-fetching and efficient processing.",
+      "Troubleshoot application and production issues using Jira, logs, Java debugging, SQL analysis, database validation, and report comparisons, collaborating with technical and business stakeholders.",
+    ],
+    tech: ["Java", "Spring Boot", "REST APIs", "AWS API Gateway", "Apache POI", "SQL", "XML/JSON", "Jira"],
+  },
+  {
+    role: "Software Developer",
     company: "RW Team",
     period: "Sep 2025 — Jun 2026",
     description: "Contributing to a large-scale ERP platform, building and maintaining multiple backend modules using Java, Spring Boot, Vue.js, and Elasticsearch. Designed and implemented the Returns Module backend.",
@@ -45,7 +61,7 @@ const ExperienceSection = () => {
           <div className="space-y-12">
             {experiences.map((exp, i) => (
               <motion.div
-                key={exp.role}
+                key={`${exp.company}-${exp.period}`}
                 initial={{ opacity: 0, x: -40 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.7, delay: 0.2 * i }}
@@ -68,7 +84,19 @@ const ExperienceSection = () => {
                     <span className="font-mono text-xs text-primary tracking-wider">{exp.period}</span>
                   </div>
                   <p className="font-display text-primary/80 font-medium mb-3">{exp.company}</p>
-                  <p className="text-muted-foreground leading-relaxed mb-4">{exp.description}</p>
+                  {"client" in exp && (
+                    <p className="text-muted-foreground text-sm mb-1">{exp.client}</p>
+                  )}
+                  {"location" in exp && (
+                    <p className="text-muted-foreground text-sm mb-4">{exp.location}</p>
+                  )}
+                  {Array.isArray(exp.description) ? (
+                    <ul className="text-muted-foreground leading-relaxed mb-4 list-disc pl-5 space-y-2">
+                      {exp.description.map((item) => <li key={item}>{item}</li>)}
+                    </ul>
+                  ) : (
+                    <p className="text-muted-foreground leading-relaxed mb-4">{exp.description}</p>
+                  )}
                   <div className="flex flex-wrap gap-2">
                     {exp.tech.map((t) => (
                       <span key={t} className="font-mono text-xs px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
